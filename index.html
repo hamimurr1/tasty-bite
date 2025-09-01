@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DaisyUI White Theme</title>
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
             colors: {
               clifford: "#da373d",
+              primaryText: "#e02a0f",
+              primaryButton: "#db5a19",
+              second: "#d9b327",
             },
           },
         },
@@ -25,17 +39,21 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
   </head>
-  <body>
-    <div class="container mx-auto">
+  <!-- ✅ Apply font here -->
+  <body class="font-poppins">
+    <div class="">
       <nav>
-        <div class="navbar bg-orange-500 rounded-xl">
+        <div class="navbar bg-base-100">
           <!-- Left side -->
           <div class="navbar-start">
             <!-- Mobile menu (hamburger) -->
             <div class="dropdown">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                <!-- hamburger icon -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
@@ -63,32 +81,37 @@
             </div>
 
             <!-- Logo / Brand -->
-            <a class="btn btn-ghost text-xl">daisyUI</a>
+            <a class="btn btn-ghost text-xl"
+              ><i class="fa-solid fa-burger text-orange-500"></i>Tasty
+              <span class="text-orange-500">Bites</span>
+            </a>
           </div>
 
           <!-- Center menu for large screen -->
           <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-              <li><a>Home</a></li>
-              <li><a>About</a></li>
-              <li><a>Contact</a></li>
+            <ul class="menu menu-horizontal px-1 text-primaryText text-lg">
+              <li><a class="hover:bg-black">Home</a></li>
+              <li><a class="hover:bg-black">About</a></li>
+              <li><a class="hover:bg-black">Contact</a></li>
             </ul>
           </div>
 
           <!-- Right side -->
           <div class="navbar-end">
-            <a class="btn">Button</a>
+            <a class="btn bg-primaryButton text-base-100 hover:bg-second w-40"
+              >Menu</a
+            >
           </div>
         </div>
       </nav>
     </div>
-    <!--Hero-->
 
+    <!--Hero-->
     <div>
       <div
         class="hero min-h-screen"
         style="
-          background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);
+          background-image: url(https://i.ibb.co/FkWX4LZS/Lucid-Origin-A-vibrant-highresolution-background-image-for-a-m-3.jpg);
         "
       >
         <div class="hero-overlay"></div>
@@ -100,10 +123,96 @@
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button class="btn btn-primary">Get Started</button>
+            <button class="btn bg-primaryButton">Order Now</button>
           </div>
         </div>
       </div>
     </div>
+    <!--Best selling-->
+    <div class="container mx-auto flex justify-center m-3">
+      <h1 class="text-center">Best Items</h1>
+      <div class="carousel w-96 h-96 rounded-full overflow-hidden">
+        <div id="slide1" class="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/bRB7h664/pizza-pizza-filled-with-tomatoes-salami-olives.jpg"
+            class="w-full h-full object-cover rounded-full"
+          />
+          <div
+            class="absolute left-2 right-2 top-1/2 flex -translate-y-1/2 justify-between"
+          >
+            <a href="#slide4" class="btn btn-circle btn-sm">❮</a>
+            <a href="#slide2" class="btn btn-circle btn-sm">❯</a>
+          </div>
+        </div>
+
+        <div id="slide2" class="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/V0GkgQj7/double-cheeseburger.jpg"
+            class="w-full h-full object-cover rounded-full"
+          />
+          <div
+            class="absolute left-2 right-2 top-1/2 flex -translate-y-1/2 justify-between"
+          >
+            <a href="#slide1" class="btn btn-circle btn-sm">❮</a>
+            <a href="#slide3" class="btn btn-circle btn-sm">❯</a>
+          </div>
+        </div>
+
+        <div id="slide3" class="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/tpb8jw13/chicken-skewers-with-slices-sweet-peppers-dill.jpg"
+            class="w-full h-full object-cover rounded-full"
+          />
+          <div
+            class="absolute left-2 right-2 top-1/2 flex -translate-y-1/2 justify-between"
+          >
+            <a href="#slide2" class="btn btn-circle btn-sm">❮</a>
+            <a href="#slide4" class="btn btn-circle btn-sm">❯</a>
+          </div>
+        </div>
+
+        <div id="slide4" class="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/HDC9K4Zr/side-view-shawarma-with-fried-potatoes-board-cookware.jpg"
+            class="w-full h-full object-cover rounded-full"
+          />
+          <div
+            class="absolute left-2 right-2 top-1/2 flex -translate-y-1/2 justify-between"
+          >
+            <a href="#slide3" class="btn btn-circle btn-sm">❮</a>
+            <a href="#slide1" class="btn btn-circle btn-sm">❯</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer sm:footer-horizontal bg-base-200 text-black p-10">
+      <img
+        class="w-40 h-30"
+        src="https://i.ibb.co/9mXFgc7Q/chicken-skewers-with-slices-sweet-peppers-dill.jpg"
+        alt=""
+      />
+      <nav>
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover text-primaryText">Menu</a>
+        <a class="link link-hover text-primaryText">Catering</a>
+        <a class="link link-hover text-primaryText">Reservations</a>
+        <a class="link link-hover text-primaryText">Home Delivery</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover text-primaryText">About us</a>
+        <a class="link link-hover text-primaryText">Contact</a>
+        <a class="link link-hover text-primaryText">Locations & Hours</a>
+        <a class="link link-hover text-primaryText">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover text-primaryText">Terms of use</a>
+        <a class="link link-hover text-primaryText">Privacy policy</a>
+        <a class="link link-hover text-primaryText">Cookie policy</a>
+      </nav>
+    </footer>
   </body>
 </html>
